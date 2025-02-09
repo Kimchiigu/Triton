@@ -18,3 +18,9 @@ npm run setup
 ```bash
 npm run start
 ```
+
+## Notes
+### if you want to use HMR (Hot Module Reload), run npm run frontend in powershell terminal (not WSL) 
+```powershell
+npm run frontend
+```
