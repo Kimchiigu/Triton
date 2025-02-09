@@ -4,17 +4,22 @@
 wsl
 ```
 
-### 2. Initialize motoko
+### 2. Install all packages from npm first
+```bash
+npm i
+```
+
+### 3. Initialize motoko
 ```bash
 dfx start --clean --background
 ```
 
-### 3. Deploy the motoko canister and frontend to your local internet first
+### 4. Deploy the motoko canister and frontend to your local internet first
 ```bash
 npm run setup
 ```
 
-### 4. Deploy the website
+### 5. Deploy the website
 ```bash
 npm run start
 ```
