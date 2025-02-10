@@ -1,18 +1,13 @@
+import Principal "mo:base/Principal";
+
 actor class Backend() {
-  stable var counter = 0;
 
-  // Get the current count
-  public query func get() : async Nat {
-    counter;
+  public shared (msg) func whoami() : async Principal {
+    msg.caller
   };
 
-  // Increment the count by one
-  public func inc() : async () {
-    counter += 2;
+  public shared func printHello() : async Text {
+    "Hello from Backend"
   };
-
-  // Add `n` to the current count
-  public func add(n : Nat) : async () {
-    counter += n;
-  };
+  
 };

@@ -19,7 +19,10 @@ export default function LandingPage() {
       >
         Triton
       </GradientText>
-      <RainbowButton className='text-white mt-5' onClick={() => navigate('/crud')}>
+      <RainbowButton
+        className="text-white mt-5"
+        onClick={() => navigate('/register')}
+      >
         Get Started
       </RainbowButton>
     </div>
