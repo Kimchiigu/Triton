@@ -3,17 +3,17 @@ import { describe, expect, it } from 'vitest';
 import App from '@/frontend/App';
 import { StrictMode } from 'react';
 import { ActorProvider, AgentProvider } from '@ic-reactor/react';
-import { canisterId, idlFactory } from '../../../declarations/backend';
+// import { canisterId, idlFactory } from '../../../declarations/backend';
 
 describe('App', () => {
   it('renders as expected', () => {
     render(
       <StrictMode>
-        <AgentProvider withProcessEnv disableAuthenticateOnMount>
-          <ActorProvider idlFactory={idlFactory} canisterId={canisterId}>
+        {/* <AgentProvider withProcessEnv disableAuthenticateOnMount>
+          <ActorProvider idlFactory={idlFactory} canisterId={canisterId}> */}
             <App />
-          </ActorProvider>
-        </AgentProvider>
+          {/* </ActorProvider>
+        </AgentProvider> */}
       </StrictMode>,
     );
     // expect(screen.getByText(/Vite + React + Motoko/i)).toBeInTheDocument();

@@ -21,7 +21,7 @@ export default function LandingPage() {
       </GradientText>
       <RainbowButton
         className="text-white mt-5"
-        onClick={() => navigate('/register')}
+        onClick={() => navigate('/login')}
       >
         Get Started
       </RainbowButton>
