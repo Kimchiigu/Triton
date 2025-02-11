@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '@/util/use-auth-client';
+import { useAuth } from '@/frontend/src/util/use-auth-client';
 
 export default function Logout() {
   const { login } = useAuth();

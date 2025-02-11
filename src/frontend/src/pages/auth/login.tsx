@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '@/util/use-auth-client';
+import { useAuth } from '@/frontend/src/util/use-auth-client';
 
 const whoamiStyles = {
   border: '1px solid #1a1a1a',

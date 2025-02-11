@@ -4,7 +4,7 @@ import { z } from 'zod';
 import {
   idlFactory as backend_idl,
   canisterId as backend_id,
-} from '../../declarations/backend';
+} from '../../../../declarations/backend';
 import { Actor, HttpAgent } from '@dfinity/agent';
 
 const agent = new HttpAgent();
@@ -13,7 +13,7 @@ const backend = Actor.createActor(backend_idl, {
   canisterId: backend_id,
 });
 
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 import {
   Form,
   FormControl,
@@ -22,9 +22,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import Aurora from '@/components/backgrounds/Aurora/Aurora';
+} from '../../components/ui/form';
+import { Input } from '../../components/ui/input';
+import Aurora from '../../components/backgrounds/Aurora/Aurora';
 
 const FormSchema = z.object({
   username: z.string().min(2, {

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Aurora from '../components/backgrounds/Aurora/Aurora';
 import GradientText from '../components/textanimations/GradientText/GradientText';
-import { RainbowButton } from '@/components/magicui/rainbow-button';
+import { RainbowButton } from '../components/magicui/rainbow-button';
 
 export default function LandingPage() {
   const navigate = useNavigate();

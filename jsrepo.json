@@ -6,10 +6,10 @@
   "formatter": "prettier",
   "configFiles": {},
   "paths": {
-    "*": "./src/blocks",
-    "Backgrounds": "./src/components/backgrounds",
-    "Animations": "./src/components/animations",
-    "TextAnimations": "./src/components/textanimations",
-    "Components": "./src/components/component"
+    "*": "./src/frontend/src/blocks",
+    "Backgrounds": "./src/frontend/src/components/backgrounds",
+    "Animations": "./src/frontend/src/components/animations",
+    "TextAnimations": "./src/frontend/src/components/textanimations",
+    "Components": "./src/frontend/src/components/component"
   }
 }

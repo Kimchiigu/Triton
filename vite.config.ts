@@ -8,7 +8,7 @@ import environment from 'vite-plugin-environment';
 dotenv.config();
 
 export default defineConfig({
-  root: 'src',
+  root: 'src/frontend',
   build: {
     outDir: '../dist',
     emptyOutDir: true,

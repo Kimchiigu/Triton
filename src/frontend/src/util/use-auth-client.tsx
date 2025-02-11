@@ -10,7 +10,7 @@ import React, {
   useState,
   ReactNode,
 } from 'react';
-import { canisterId, createActor } from '../declarations/backend';
+import { canisterId, createActor } from '../../../declarations/backend';
 import { ActorSubclass, HttpAgent, Identity } from '@dfinity/agent';
 
 interface AuthContextType {
