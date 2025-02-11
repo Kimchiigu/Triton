@@ -53,43 +53,49 @@ export default function Login() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
     if (identity) {
       const principal = identity.getPrincipal();
       console.log(principal.toText());
 
-      toast({
-        title: 'You submitted the following values:',
-        description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-          </pre>
-        ),
-      });
+      const existingUser = await backend_user.getUserById(principal);
 
-      backend_user.register(
-        principal,
-        data.name,
-        data.email,
-        data.dob.toString(),
-      );
+      if (existingUser) {
+        await backend_user.updateUser(
+          principal,
+          data.name,
+          data.email,
+          data.dob.toString(),
+        );
+        toast({ title: 'User updated successfully.' });
+      } else {
+        await backend_user.register(
+          principal,
+          data.name,
+          data.email,
+          data.dob.toString(),
+        );
+        toast({ title: 'User registered successfully.' });
+      }
     } else {
       console.error('Identity is null or undefined');
     }
   }
 
   useEffect(() => {
-    const fetchName = async () => {
+    const fetchUserDetails = async () => {
       if (identity) {
         const principal = identity.getPrincipal();
-        const name = await backend_user.getName(principal);
-        const email = await backend_user.getEmail(principal);
-        form.setValue('name', name);
-        form.setValue('email', email);
+        const existingUser = await backend_user.getUserById(principal);
+
+        if (existingUser) {
+          form.setValue('name', await backend_user.getName(principal));
+          form.setValue('email', await backend_user.getEmail(principal));
+        }
       }
     };
 
-    fetchName();
+    fetchUserDetails();
   }, [identity, form]);
 
   return (
