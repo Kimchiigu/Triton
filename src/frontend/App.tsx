@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './src/pages/landing-page';
-import Crud from './src/pages/crud-page';
-import Login from './src/pages/auth/login';
 import Logout from './src/pages/auth/logout';
-import { AuthProvider, useAuth } from './src/components/utils/use-auth-client';
+import { AuthProvider } from './src/components/utils/use-auth-client';
 import AuthPage from './src/pages/auth/auth-page';
+import HomePage from './src/pages/home/home-page';
 
 function App() {
   const routes = [
@@ -19,6 +18,10 @@ function App() {
     {
       path: '/logout',
       element: <Logout />,
+    },
+    {
+      path: '/home',
+      element: <HomePage />,
     },
   ];
 

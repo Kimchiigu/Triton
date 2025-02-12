@@ -28,6 +28,7 @@ import { format } from 'date-fns';
 
 import Aurora from '../../components/backgrounds/Aurora/Aurora';
 import { backend_user } from '@/declarations/backend_user';
+import { useNavigate } from 'react-router-dom';
 
 const FormSchema = z.object({
   name: z.string().min(5, {
@@ -40,9 +41,8 @@ const FormSchema = z.object({
 });
 
 export default function Login() {
-  const [result, setResult] = React.useState('');
-  const [date, setDate] = React.useState<Date>();
-  const { identity } = useAuth();
+  const { identity, logout } = useAuth();
+  const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -58,9 +58,10 @@ export default function Login() {
       const principal = identity.getPrincipal();
       console.log(principal.toText());
 
-      const existingUser = await backend_user.getUserById(principal);
+      const existingUser = await backend_user.getName(principal);
 
-      if (existingUser) {
+      if (existingUser != 'Stranger') {
+        console.log('user is updating');
         await backend_user.updateUser(
           principal,
           data.name,
@@ -68,7 +69,12 @@ export default function Login() {
           data.dob.toString(),
         );
         toast({ title: 'User updated successfully.' });
+
+        console.log(
+          `name : ${data.name} & email : ${data.email} & dob : ${data.dob.toString()}`,
+        );
       } else {
+        console.log('user is registering');
         await backend_user.register(
           principal,
           data.name,
@@ -77,6 +83,8 @@ export default function Login() {
         );
         toast({ title: 'User registered successfully.' });
       }
+
+      navigate('/home');
     } else {
       console.error('Identity is null or undefined');
     }
@@ -178,7 +186,20 @@ export default function Login() {
             )}
           />
 
-          <Button type="submit">Submit</Button>
+          <div className="w-full flex flex-row gap-4">
+            <Button
+              className="w-full bg-green-600 hover:bg-green-700 rounded-xl"
+              type="submit"
+            >
+              Submit
+            </Button>
+            <Button
+              className="w-full bg-red-600 hover:bg-red-700 rounded-xl shadow-xl"
+              onClick={logout}
+            >
+              Log Out
+            </Button>
+          </div>
         </form>
       </Form>
     </div>
