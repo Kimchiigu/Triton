@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useAuth } from '@/frontend/src/components/utils/use-auth-client';
+import { useEffect } from 'react';
+import { useAuth } from '@/frontend/src/hooks/use-auth-client';
 import {
   Form,
   FormControl,
@@ -56,12 +56,9 @@ export default function Login() {
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     if (identity) {
       const principal = identity.getPrincipal();
-      console.log(principal.toText());
-
       const existingUser = await backend_user.getName(principal);
 
       if (existingUser != 'Stranger') {
-        console.log('user is updating');
         await backend_user.updateUser(
           principal,
           data.name,
@@ -69,12 +66,7 @@ export default function Login() {
           data.dob.toString(),
         );
         toast({ title: 'User updated successfully.' });
-
-        console.log(
-          `name : ${data.name} & email : ${data.email} & dob : ${data.dob.toString()}`,
-        );
       } else {
-        console.log('user is registering');
         await backend_user.register(
           principal,
           data.name,
@@ -83,7 +75,6 @@ export default function Login() {
         );
         toast({ title: 'User registered successfully.' });
       }
-
       navigate('/home');
     } else {
       console.error('Identity is null or undefined');

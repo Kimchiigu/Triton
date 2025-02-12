@@ -1,4 +1,4 @@
-import { useAuth } from '../../components/utils/use-auth-client';
+import { useAuth } from '../../hooks/use-auth-client';
 import Login from './login';
 import Logout from './logout';
 

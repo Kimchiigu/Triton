@@ -1,5 +1,5 @@
 import { backend_user } from '@/declarations/backend_user';
-import { useAuth } from '../../components/utils/use-auth-client';
+import { useAuth } from '../../hooks/use-auth-client';
 import { useState, useEffect } from 'react';
 
 export default function HomePage() {
