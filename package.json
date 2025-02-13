@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "setup": "npm i && dfx canister create backend && dfx generate backend && dfx deploy",
-    "finsetup": "npm i && dfx canister create backend_user && dfx generate backend_user && dfx deploy",
+    "finsetup": "npm i && dfx canister create backend_user && dfx canister create backend_pomodoro && dfx generate backend_pomodoro && dfx generate backend_user && dfx deps deploy internet_identity && dfx deploy",
+    "finstart": "dfx deploy && dfx deps deploy internet_identity && npm run frontend",
     "start": "run-p frontend backend",
     "frontend": "vite --port 3000",
     "backend": "mo-dev --generate --deploy -y",

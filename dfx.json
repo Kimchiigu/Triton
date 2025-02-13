@@ -8,6 +8,10 @@
       "type": "motoko",
       "main": "src/backend/user-canister/main.mo"
     },
+    "backend_pomodoro": {
+      "type": "motoko",
+      "main": "src/backend/pomodoro-canister/main.mo"
+    },
     "frontend": {
       "dependencies": ["backend_user"],
       "type": "assets",

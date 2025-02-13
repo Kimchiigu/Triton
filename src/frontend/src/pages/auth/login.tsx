@@ -26,7 +26,6 @@ import { CalendarIcon } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { format } from 'date-fns';
 
-import Aurora from '../../components/backgrounds/Aurora/Aurora';
 import { backend_user } from '@/declarations/backend_user';
 import { useNavigate } from 'react-router-dom';
 
@@ -100,12 +99,16 @@ export default function Login() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="absolute inset-0 w-full h-full -z-10">
-        <Aurora colorStops={['#00FBFF', '#7CFF67', '#00D8FF']} speed={0.5} />
+        <img
+          src="https://res.cloudinary.com/dxcn5osfu/image/upload/f_auto,q_auto/v1/Triton/Website/cjfbhsmvgmeu7mndvmuu"
+          alt="Triton Background"
+          className="w-full h-full object-cover"
+        />
       </div>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-2/3 space-y-6 bg-white/30 backdrop-blur-lg p-10 rounded-2xl shadow-xl text-white"
+          className="w-2/3 space-y-6 bg-white/70 backdrop-blur-lg p-10 rounded-2xl shadow-xl "
         >
           <FormField
             control={form.control}
@@ -177,7 +180,7 @@ export default function Login() {
             )}
           />
 
-          <div className="w-full flex flex-row gap-4">
+          <div className="w-full flex flex-row gap-4 text-white">
             <Button
               className="w-full bg-green-600 hover:bg-green-700 rounded-xl"
               type="submit"
