@@ -12,6 +12,10 @@
       "type": "motoko",
       "main": "src/backend/pomodoro-canister/main.mo"
     },
+    "backend_fish": {
+      "type": "motoko",
+      "main": "src/backend/fish-canister/main.mo"
+    },
     "frontend": {
       "dependencies": ["backend_user"],
       "type": "assets",

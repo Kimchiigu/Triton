@@ -1,56 +1,72 @@
-# First Setup
-#### 1. Use WSL terminal to run dfx package manager
-```bash
-wsl
+# How to Run the Project
+
+## Always Run This First
+To ensure the DFX environment is active, run the following command:
+
+```sh
+ dfx start --clean --background
 ```
 
-#### 2. Install all packages from npm first
-```bash
-npm i
-```
+## First Setup (If Cloning the Repository for the First Time)
 
-#### 3. Initialize motoko
-```bash
-dfx start --clean --background
-```
+1. Install the required dependencies:
+   ```sh
+   npm i
+   ```
 
-#### 4. Deploy the motoko canister and frontend to your local internet first
-```bash
-npm run setup
-```
+2. Set up **Internet Identity**:
+   ```sh
+   dfx deps pull
+   dfx generate internet_identity
+   ```
 
-#### 5. Deploy the website
-```bash
-npm run start
-```
+3. Set up **Backend User**:
+   ```sh
+   dfx canister create backend_user
+   dfx generate backend_user
+   ```
+
+4. Set up **Backend Pomodoro**:
+   ```sh
+   dfx canister create backend_pomodoro
+   dfx generate backend_pomodoro
+   ```
+
+5. Set up **Frontend**:
+   ```sh
+   dfx canister create frontend
+   dfx generate frontend
+   ```
+
+6. Once everything is set up, deploy the application:
+   ```sh
+   dfx deploy
+   ```
+
+7. You can bypass all of the setups with the command:
+   ```sh
+   npm run finsetup
+   ```
+   See the detail command of "finsetup" in file package.json (root directory)
+
 ---
-# How to Run
-#### 1. Start the DFX Service
-```bash
-dfx start --clean --background
-```
 
-#### 2. Create canister for internet_identity
-```bash
-dfx deps deploy internet_identity
-```
-##### You need to do this because it doesn't combined with the npm run setup command
+## If Already Set Up Previously
 
-#### 3. Generate canister for backend_user, internet_identity
-```bash
-dfx generate internet_identity && dfx generate backend_user
-```
-##### It needs to be generated so the frontend can access the backend canister. You can see the canister in the declarations folder
+1. Deploy **Internet Identity**:
+   ```sh
+   dfx deps deploy internet_identity
+   ```
 
-##### !!!! Also generate for the frontend when you are ready to deploy it to the ICP
+2. Deploy the entire application:
+   ```sh
+   dfx deploy
+   ```
 
-#### 4. Deploy the canister to your local network
-```bash
-dfx deploy
-```
+3. Run the **Frontend** (use **PowerShell**, not WSL, to enable **Hot Module Reload (HMR)**):
+   ```sh
+   npm run frontend
+   ```
 
-## Notes
-#### if you want to use HMR (Hot Module Reload), run npm run frontend in powershell terminal (not WSL) 
-```powershell
-npm run frontend
-```
+**Note:** No need to run `npm run backend`.
+

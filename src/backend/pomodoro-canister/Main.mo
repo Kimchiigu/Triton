@@ -20,4 +20,12 @@ actor Pomodoro {
     isBreak := false;
   };
 
+  public query func getIsRunning() : async Bool {
+    return isRunning;
+  };
+
+  public query func getIsBreak() : async Bool {
+    return isBreak;
+  };
+
 };

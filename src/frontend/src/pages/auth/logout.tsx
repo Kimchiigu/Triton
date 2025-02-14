@@ -1,8 +1,14 @@
 import { useAuth } from '../../hooks/use-auth-client';
 import { Button } from '../../components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 export default function Logout() {
   const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const goBack = async () => {
+    await navigate('/');
+  };
 
   return (
     <div className="flex flex-col h-screen justify-center items-center">
@@ -25,6 +31,14 @@ export default function Logout() {
           color="white"
         >
           Log in
+        </Button>
+        <Button
+          variant={'default'}
+          onClick={goBack}
+          className="w-5/6 bg-slate-600 text-white hover:bg-slate-700 rounded-xl"
+          color="white"
+        >
+          Go to Landing Page
         </Button>
       </div>
     </div>
