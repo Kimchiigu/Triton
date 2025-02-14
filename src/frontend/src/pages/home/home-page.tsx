@@ -34,7 +34,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col h-screen justify-center items-center">
-      <div className="absolute inset-0 w-full h-full -z-10">
+      <div className="absolute inset-0 w-full h-full z-[-1]">
         <img
           src="https://res.cloudinary.com/dxcn5osfu/image/upload/f_auto,q_auto/v1/Triton/Website/cjfbhsmvgmeu7mndvmuu"
           alt="Triton Background"

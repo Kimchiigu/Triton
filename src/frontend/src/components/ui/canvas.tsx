@@ -12,7 +12,7 @@ export default function Canvas() {
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const gameFrameRef = useRef<number>(0);
-  const [playerState, setPlayerState] = useState<PlayerState>('cast');
+  const [playerState, setPlayerState] = useState<PlayerState>('idle');
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -49,7 +49,7 @@ export default function Canvas() {
     const waveScale = 0.55;
 
     let staggerFrames = 10;
-    let waveStaggerFrames = 18;
+    let waveStaggerFrames = 35;
 
     type SpriteAnimation = {
       frames: number;
@@ -89,9 +89,9 @@ export default function Canvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       if (playerState === 'idle') {
-        staggerFrames = 15;
+        staggerFrames = 25;
       } else {
-        staggerFrames = 10;
+        staggerFrames = 17;
       }
 
       const frame =

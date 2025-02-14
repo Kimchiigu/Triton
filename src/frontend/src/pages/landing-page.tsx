@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { RainbowButton } from '../components/magicui/rainbow-button';
+import { Button } from '../components/ui/button';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -13,13 +14,18 @@ export default function LandingPage() {
           className="w-full h-full object-cover"
         />
       </div>
-      <h1 className="text-9xl font-mono">Triton</h1>
-      <RainbowButton
-        className="text-white mt-5 font-mono"
+      <div className="flex justify-center items-center">
+        <h1 className="text-9xl font-pixel bg-white/10 text-white rounded-sm p-8 backdrop-blur-sm hover:bg-secondary/50 hover:text-black cursor-default transition duration-300 ease-in-out">
+          Triton
+        </h1>
+      </div>
+
+      <Button
+        className="text-white mt-5 font-pixel text-2xl p-8"
         onClick={() => navigate('/login')}
       >
         Get Started
-      </RainbowButton>
+      </Button>
     </div>
   );
 }
