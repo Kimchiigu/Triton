@@ -1,3 +1,19 @@
+# Clone this Project
+1. Run this command to clone the repository
+   ```sh
+   git clone https://github.com/Kimchiigu/Triton.git
+   ```
+   
+2. Open your IDE in the Triton folder
+   ```sh
+   cd Triton
+   ```
+   If you use Visual Studio Code
+   ```sh
+   code .
+   ```
+---
+
 # How to Run the Project
 
 ## Always Run This First
