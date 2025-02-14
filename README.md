@@ -16,6 +16,48 @@
 
 # How to Run the Project
 
+## **IMPORTANT** for Windows User (WSL Setup)
+DFX command can only be run in a linux environment, so Windows user needs to use WSL (Windows Subsystem Linux)
+1. Install WSL (if you don't have) / Run WSL (if you already have installed)
+   ```sh
+   wsl
+   ```
+   For user who use WSL for the first time, just wait for the installation to be completed
+2. If WSL is success, then it will show you a Linux terminal
+   ```sh
+   <username>@<device_name>:~$
+   ```
+3. Update package lists
+   ```sh
+   sudo apt update
+   ```
+   Usually the package is out of date so you need to update it manually
+4. Install node.js and npm (Node Package Manager)
+   ```sh
+   sudo apt install nodejs npm
+   ```
+5. Check the version for both
+   ```sh
+   node -v
+   npm -v
+   ```
+   Best to update the node and npm to the latest!
+6. Install the IC SDK
+   ```sh
+   sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
+   ```
+7. Check if DFX is successfully installed (DFX is the package manager installer for ICP)
+   ```sh
+   dfx --version
+   ```
+8. Make a Developer Identity
+   ```sh
+   dfx identity list
+   dfx identity new IDENTITY_NAME
+   dfx identity use IDENTITY_NAME
+   ```
+   When creating new identity, it will ask you to make a passphrase (password) for everytime you deploy a canister to the ICP
+
 ## Always Run This First
 To ensure the DFX environment is active, run the following command:
 
