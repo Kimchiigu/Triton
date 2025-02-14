@@ -4,8 +4,11 @@ import Logout from './src/pages/auth/logout';
 import { AuthProvider } from './src/hooks/use-auth-client';
 import AuthPage from './src/pages/auth/auth-page';
 import HomePage from './src/pages/home/home-page';
+import { useAuth } from './src/hooks/use-auth-client';
 
 function App() {
+  const { isAuthenticated } = useAuth();
+
   const routes = [
     {
       path: '/',
@@ -21,20 +24,18 @@ function App() {
     },
     {
       path: '/home',
-      element: <HomePage />,
+      element: <>{isAuthenticated ? <HomePage /> : <Logout />}</>,
     },
   ];
 
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          {routes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
-        </Routes>
-      </Router>
-    </AuthProvider>
+    <Router>
+      <Routes>
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </Router>
   );
 }
 
