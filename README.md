@@ -102,12 +102,15 @@ To ensure the DFX environment is active, run the following command:
    dfx generate frontend
    ```
 
-7. Once everything is set up, deploy the application:
+7. Copy `dist` folder to `src/frontend`
+   Apparently it's not copied "automatically" in the setup, so just do the copy manually
+
+8. Once everything is set up, deploy the application:
    ```sh
    dfx deploy
    ```
 
-8. **(COMING SOON)** You can bypass all of the setups with the command:
+9. **(COMING SOON)** You can bypass all of the setups with the command:
    ```sh
    npm run finsetup
    ```
