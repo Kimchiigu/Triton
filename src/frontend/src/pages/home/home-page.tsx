@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { Button } from '../../components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import PomodoroTimer from './pomodoro-timer';
+import PomodoroLayout from './pomodoro-layout';
+import Canvas from '../../components/ui/canvas';
 
 export default function HomePage() {
   const { identity } = useAuth();
@@ -39,14 +41,18 @@ export default function HomePage() {
           className="w-full h-full object-cover"
         />
       </div>
-      <h1>Hello {username}</h1>
+      {/* <h1>Hello {username}</h1> */}
+      {/*
       <PomodoroTimer />
-      <Button
+      */}
+      <Canvas />
+      <PomodoroLayout />
+      {/* <Button
         className="w-[100px] bg-green-600 hover:bg-green-700 rounded-xl text-white"
         onClick={goBack}
       >
         Go to Login
-      </Button>
+      </Button> */}
     </div>
   );
 }
