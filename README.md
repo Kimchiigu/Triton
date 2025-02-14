@@ -48,18 +48,24 @@ To ensure the DFX environment is active, run the following command:
    dfx generate backend_pomodoro
    ```
 
-5. Set up **Frontend**:
+5. Set up **Backend Fish**:
+   ```sh
+   dfx canister create backend_fish
+   dfx generate backend_fish
+   ```
+
+6. Set up **Frontend**:
    ```sh
    dfx canister create frontend
    dfx generate frontend
    ```
 
-6. Once everything is set up, deploy the application:
+7. Once everything is set up, deploy the application:
    ```sh
    dfx deploy
    ```
 
-7. You can bypass all of the setups with the command:
+8. **(COMING SOON)** You can bypass all of the setups with the command:
    ```sh
    npm run finsetup
    ```
@@ -84,5 +90,16 @@ To ensure the DFX environment is active, run the following command:
    npm run frontend
    ```
 
-**Note:** No need to run `npm run backend`.
-
+**Note:** 
+- No need to run `npm run backend` because it's already deployed to the internet.
+- If there are changes in the backend (mainly the Motoko file `Main.mo`) then run `dfx deploy` again.
+- If you want to create a new canister, then you need to run:
+  - `dfx canister create <canister_name>`
+  - `dfx generate <canister_name>`
+  - Add the canister configuration in `dfx.json` with the format: <br>
+     `"<backend_name>": {
+         "type": "motoko",
+         "main": "your_directory/main.mo"
+       },`
+  - Then deploy with `dfx deploy`
+- The motoko file name doesn't have to be `Main.mo`, it can be anything like `User.mo`, `Fish.mo`, etc
