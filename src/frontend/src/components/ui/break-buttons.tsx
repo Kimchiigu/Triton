@@ -1,17 +1,32 @@
 import { Button } from './button';
 
-export default function BreakButtons() {
+interface BreakButtonsProps {
+  mode: string;
+  setMode: (mode: string) => void;
+}
+
+export default function BreakButtons({ mode, setMode }: BreakButtonsProps) {
+  const buttons = [
+    { label: 'Pomodoro', value: 'Pomodoro' },
+    { label: 'Short Break', value: 'Short Break' },
+    { label: 'Long Break', value: 'Long Break' },
+  ];
+
   return (
     <div className="flex flex-row justify-center items-center gap-12">
-      <Button className="text-3xl p-8 font-pixel border-4 border-blue-400 hover:bg-blue-400">
-        Pomodoro
-      </Button>
-      <Button className="text-3xl p-8 font-pixel border-4 border-blue-400 hover:bg-blue-400">
-        Short Break
-      </Button>
-      <Button className="text-3xl p-8 font-pixel border-4 border-blue-400 hover:bg-blue-400">
-        Long Break
-      </Button>
+      {buttons.map(({ label, value }) => (
+        <Button
+          key={value}
+          onClick={() => setMode(value)}
+          className={`text-2xl p-6 font-pixel border-4 ${
+            mode === value
+              ? 'bg-blue-800 border-blue-800 hover:bg-blue-800 hover:border-blue-800'
+              : 'border-blue-400 hover:bg-blue-500 hover:border-blue-500'
+          }`}
+        >
+          {label}
+        </Button>
+      ))}
     </div>
   );
 }

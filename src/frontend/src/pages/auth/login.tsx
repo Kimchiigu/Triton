@@ -108,7 +108,7 @@ export default function Login() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-2/4 space-y-6 bg-white backdrop-blur-lg p-10 rounded-2xl shadow-xl "
+          className="w-2/4 space-y-6 bg-white backdrop-blur-lg p-10 rounded-2xl shadow-xl"
         >
           <FormField
             control={form.control}
@@ -192,13 +192,13 @@ export default function Login() {
 
           <div className="w-full flex flex-row gap-4 text-white">
             <Button
-              className="w-full bg-green-500 hover:bg-green-500/80 rounded-xl"
+              className="w-full bg-green-500 hover:bg-green-500/80 rounded-xl font-pixel text-lg"
               type="submit"
             >
               Submit
             </Button>
             <Button
-              className="w-full bg-red-500 hover:bg-red-500/80 rounded-xl shadow-xl"
+              className="w-full bg-red-500 hover:bg-red-500/80 rounded-xl shadow-xl font-pixel text-lg"
               onClick={logout}
             >
               Log Out
