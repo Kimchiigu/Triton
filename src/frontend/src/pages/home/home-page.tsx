@@ -42,10 +42,6 @@ export default function HomePage() {
           className="w-full h-full object-cover"
         />
       </div>
-      {/* <h1>Hello {username}</h1> */}
-      {/*
-      <PomodoroTimer />
-      */}
       <UIButtons></UIButtons>
       <Canvas />
       <PomodoroLayout />
