@@ -111,9 +111,11 @@ To ensure the DFX environment is active, run the following command:
 6. Set up **Frontend**:
 
    ```sh
+   npm run build
    dfx canister create frontend
    dfx generate frontend
    ```
+   You need to run `npm run build` to generate a dist folder that will be used when `dfx deploy`
 
 7. Copy `dist` folder to `src/frontend`
    Apparently it's not copied "automatically" in the setup, so just do the copy manually
