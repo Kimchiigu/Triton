@@ -6,6 +6,8 @@ import TrieMap "mo:base/TrieMap";
 import Result "mo:base/Result";
 import Bool "mo:base/Bool";
 import Array "mo:base/Array";
+import Nat64 "mo:base/Nat64";
+import Blob "mo:base/Blob";
 
 actor {
    // Model

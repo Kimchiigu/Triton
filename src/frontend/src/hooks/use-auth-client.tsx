@@ -12,7 +12,6 @@ import React, {
 } from 'react';
 import { canisterId, createActor } from '@/declarations/internet_identity';
 import { ActorSubclass, HttpAgent, Identity } from '@dfinity/agent';
-import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
   isAuthenticated: boolean;
