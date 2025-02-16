@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import BreakButtons from '../../components/ui/break-buttons';
-import { Button } from '../../components/ui/button';
-import PomodoroTimerBox from '../../components/ui/pomodoro-timer-box';
+import BreakButtons from './break-buttons';
+import { Button } from './button';
+import PomodoroTimerBox from './pomodoro-timer-box';
 
 export default function PomodoroLayout() {
   const [mode, setMode] = useState<string>('Pomodoro');

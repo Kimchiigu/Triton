@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '../../components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import PomodoroTimer from './pomodoro-timer';
-import PomodoroLayout from './pomodoro-layout';
+import PomodoroLayout from '../../components/ui/pomodoro-layout';
 import Canvas from '../../components/ui/canvas';
 import UIButtons from '../../components/ui/ui-buttons';
 
@@ -12,10 +12,6 @@ export default function HomePage() {
   const { identity } = useAuth();
   const navigate = useNavigate();
   const [username, setUsername] = useState('Stranger');
-
-  const goBack = async () => {
-    navigate('/login');
-  };
 
   useEffect(() => {
     const fetchUsername = async () => {
@@ -42,6 +38,7 @@ export default function HomePage() {
           className="w-full h-full object-cover"
         />
       </div>
+      <div className="absolute w-1/2 h-20 bg-white top-0"></div>
       <UIButtons></UIButtons>
       <Canvas />
       <PomodoroLayout />

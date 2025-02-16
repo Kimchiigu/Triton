@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './src/pages/landing-page';
 import Logout from './src/pages/auth/logout';
-import { AuthProvider } from './src/hooks/use-auth-client';
 import AuthPage from './src/pages/auth/auth-page';
 import HomePage from './src/pages/home/home-page';
 import { useAuth } from './src/hooks/use-auth-client';
-import Transaction from './src/pages/transaction/transaction-page';
+import OrganizationPage from './src/pages/organization-page';
+import OrganizationDetailPage from './src/pages/organization-detail-page';
+import TransactionListPage from './src/pages/transaction-list-page';
 
 function App() {
   const { isAuthenticated } = useAuth();
@@ -28,9 +29,17 @@ function App() {
       element: <>{isAuthenticated ? <HomePage /> : <Logout />}</>,
     },
     {
-      path: "/transaction",
-      element: <Transaction />
-    }
+      path: '/organization',
+      element: <>{isAuthenticated ? <OrganizationPage /> : <Logout />}</>,
+    },
+    {
+      path: '/organization/:id',
+      element: <>{isAuthenticated ? <OrganizationDetailPage /> : <Logout />}</>,
+    },
+    {
+      path: '/organization/:id/transactions',
+      element: <>{isAuthenticated ? <TransactionListPage /> : <Logout />}</>,
+    },
   ];
 
   return (

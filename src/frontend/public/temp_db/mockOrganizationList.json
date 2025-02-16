@@ -1,0 +1,52 @@
+{
+  "organizations": [
+    {
+      "organization_id": "ORG001",
+      "name": "Blue Ocean Guardians",
+      "logo": "https://res.cloudinary.com/dqvlnzw9f/image/upload/f_auto,q_auto/v1/Triton/assets/jt8o4gcvhmznhsrmzyv8",
+      "description": "A nonprofit dedicated to protecting marine life and cleaning up ocean debris through global volunteer programs."
+    },
+    {
+      "organization_id": "ORG002",
+      "name": "Coastal Care Initiative",
+      "logo": "https://res.cloudinary.com/dqvlnzw9f/image/upload/f_auto,q_auto/v1/Triton/assets/jt8o4gcvhmznhsrmzyv8",
+      "description": "Focused on preserving coastal ecosystems and reducing pollution through education, conservation, and restoration projects."
+    },
+    {
+      "organization_id": "ORG003",
+      "name": "Wave Warriors",
+      "logo": "https://res.cloudinary.com/dqvlnzw9f/image/upload/f_auto,q_auto/v1/Triton/assets/jt8o4gcvhmznhsrmzyv8",
+      "description": "An action-driven nonprofit that organizes community beach cleanups and advocates for sustainable ocean policies."
+    },
+    {
+      "organization_id": "ORG004",
+      "name": "Sea Turtle Rescue Alliance",
+      "logo": "https://res.cloudinary.com/dqvlnzw9f/image/upload/f_auto,q_auto/v1/Triton/assets/jt8o4gcvhmznhsrmzyv8",
+      "description": "A dedicated group working to rescue, rehabilitate, and release endangered sea turtles back into the wild."
+    },
+    {
+      "organization_id": "ORG005",
+      "name": "Reef Restoration Network",
+      "logo": "https://res.cloudinary.com/dqvlnzw9f/image/upload/f_auto,q_auto/v1/Triton/assets/jt8o4gcvhmznhsrmzyv8",
+      "description": "Focused on rebuilding coral reef ecosystems through innovative restoration techniques and community engagement."
+    },
+    {
+      "organization_id": "ORG006",
+      "name": "Ocean Plastic Watch",
+      "logo": "https://res.cloudinary.com/dqvlnzw9f/image/upload/f_auto,q_auto/v1/Triton/assets/jt8o4gcvhmznhsrmzyv8",
+      "description": "A global movement tracking and reducing plastic waste in the ocean through science and policy advocacy."
+    },
+    {
+      "organization_id": "ORG007",
+      "name": "Beach Rescue Volunteers",
+      "logo": "https://res.cloudinary.com/dqvlnzw9f/image/upload/f_auto,q_auto/v1/Triton/assets/jt8o4gcvhmznhsrmzyv8",
+      "description": "A grassroots organization organizing volunteers to clean and protect beaches worldwide."
+    },
+    {
+      "organization_id": "ORG008",
+      "name": "Marine Mammal Protection Society",
+      "logo": "https://res.cloudinary.com/dqvlnzw9f/image/upload/f_auto,q_auto/v1/Triton/assets/jt8o4gcvhmznhsrmzyv8",
+      "description": "Working to protect whales, dolphins, and other marine mammals from human threats and habitat destruction. Working to protect whales, dolphins, and other marine mammals from human threats and habitat destruction"
+    }
+  ]
+}
