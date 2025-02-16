@@ -1,6 +1,6 @@
 import Bool "mo:base/Bool";
 
-actor Pomodoro {
+actor {
 
   var isRunning : Bool = false;
   var isBreak : Bool = false;
