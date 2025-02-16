@@ -7,6 +7,7 @@ import { useAuth } from './src/hooks/use-auth-client';
 import OrganizationPage from './src/pages/organization-page';
 import OrganizationDetailPage from './src/pages/organization-detail-page';
 import TransactionListPage from './src/pages/transaction-list-page';
+import Transaction from './src/pages/transaction/transaction-page';
 
 function App() {
   const { isAuthenticated } = useAuth();
@@ -27,6 +28,10 @@ function App() {
     {
       path: '/home',
       element: <>{isAuthenticated ? <HomePage /> : <Logout />}</>,
+    },
+    {
+      path: '/transaction',
+      element: <>{isAuthenticated ? <Transaction /> : <Logout />}</>,
     },
     {
       path: '/organization',
