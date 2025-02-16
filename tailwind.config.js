@@ -5,8 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        jersey: ['Jersey 15', 'serif'],
-        pixel: ['"Born2bSportyFS"', 'sans-serif'],
+        pixel: ['Pixelify Sans', 'sans-serif'],
       },
       keyframes: {
         gradient: {

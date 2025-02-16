@@ -108,18 +108,22 @@ export default function Login() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-2/3 space-y-6 bg-white/70 backdrop-blur-lg p-10 rounded-2xl shadow-xl "
+          className="w-2/4 space-y-6 bg-white backdrop-blur-lg p-10 rounded-2xl shadow-xl"
         >
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="font-pixel text-2xl">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" {...field} />
+                  <Input
+                    className="font-pixel"
+                    placeholder="John Doe"
+                    {...field}
+                  />
                 </FormControl>
-                <FormDescription>
+                <FormDescription className="font-pixel text-md">
                   This is your public display name.
                 </FormDescription>
                 <FormMessage />
@@ -132,15 +136,18 @@ export default function Login() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="font-pixel text-2xl">Email</FormLabel>
                 <FormControl>
                   <Input
+                    className="font-pixel"
                     type="email"
                     placeholder="example@email.com"
                     {...field}
                   />
                 </FormControl>
-                <FormDescription>Enter a valid email address.</FormDescription>
+                <FormDescription className="font-pixel text-md">
+                  Enter a valid email address.
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -151,15 +158,16 @@ export default function Login() {
             name="dob"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel>Date of Birth</FormLabel>
+                <FormLabel className="font-pixel text-2xl">
+                  Date of Birth
+                </FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
-                      variant={'outline'}
-                      className={cn(
-                        'w-[280px] justify-start text-left font-normal',
-                        !field.value && 'text-muted-foreground',
-                      )}
+                      //   'w-[280px] justify-start text-left font-normal',
+                      //   !field.value && 'text-muted-foreground',
+                      // )}
+                      className="w-1/2 bg-white text-gray-500 font-pixel justify-start hover:bg-gray-200"
                     >
                       <CalendarIcon className="mr-2" />
                       {field.value ? format(field.value, 'PPP') : 'Pick a date'}
@@ -174,7 +182,9 @@ export default function Login() {
                     />
                   </PopoverContent>
                 </Popover>
-                <FormDescription>Select your date of birth.</FormDescription>
+                <FormDescription className="font-pixel text-md">
+                  Select your date of birth.
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -182,13 +192,13 @@ export default function Login() {
 
           <div className="w-full flex flex-row gap-4 text-white">
             <Button
-              className="w-full bg-green-600 hover:bg-green-700 rounded-xl"
+              className="w-full bg-green-500 hover:bg-green-500/80 rounded-xl font-pixel text-lg"
               type="submit"
             >
               Submit
             </Button>
             <Button
-              className="w-full bg-red-600 hover:bg-red-700 rounded-xl shadow-xl"
+              className="w-full bg-red-500 hover:bg-red-500/80 rounded-xl shadow-xl font-pixel text-lg"
               onClick={logout}
             >
               Log Out
