@@ -5,7 +5,7 @@ import { AuthProvider } from './src/hooks/use-auth-client';
 import AuthPage from './src/pages/auth/auth-page';
 import HomePage from './src/pages/home/home-page';
 import { useAuth } from './src/hooks/use-auth-client';
-import Transaction from './src/pages/home/transaction-page';
+import Transaction from './src/pages/transaction/transaction-page';
 
 function App() {
   const { isAuthenticated } = useAuth();

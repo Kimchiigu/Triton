@@ -68,10 +68,11 @@ export default function Transaction() {
       console.log('Current Sender Principal:', senderPrincipal.toText());
 
       const recipientPrincipal = Principal.fromText(recipient);
-      const transferAmount = BigInt(Number(amount) * 100_000_000);
+
+      const transferAmount = BigInt(Math.round(Number(amount) * 100_000_000));
       const TRANSFER_FEE = BigInt(10000);
 
-      const currentBalance = BigInt(Number(balance) * 100_000_000);
+      const currentBalance = BigInt(Math.round(Number(balance) * 100_000_000));
       const requiredBalance = transferAmount + TRANSFER_FEE;
 
       if (currentBalance < requiredBalance) {

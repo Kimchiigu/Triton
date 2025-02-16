@@ -81,8 +81,11 @@ To ensure the DFX environment is active, run the following command:
 
    ```sh
    dfx deps pull
+   dfx deps init
    dfx generate internet_identity
    ```
+
+   If there exist a `deps` folder after git clone, make sure to delete the folder to create a new one with the commands above due to a different download hash
 
 3. Set up **Backend User**:
 
@@ -286,16 +289,17 @@ To ensure the DFX environment is active, run the following command:
 
 11. Transfer token with ICRC-1
 
-   ```sh
-      dfx identity use <your_account_name>
-      dfx canister call icrc1_ledger_canister icrc1_transfer "(record { to = record { owner = principal \"sckqo-e2vyl-4rqqu-5g4wf-pqskh-iynjm-46ixm-awluw-ucnqa-4sl6j-mqe\";};  amount = 10_000;})"
-   ```
+```sh
+   dfx identity use <your_account_name>
+   dfx canister call icrc1_ledger_canister icrc1_transfer "(record { to = record { owner = principal \"sckqo-e2vyl-4rqqu-5g4wf-pqskh-iynjm-46ixm-awluw-ucnqa-4sl6j-mqe\";};  amount = 10_000;})"
+```
 
-   - If you run this command, then the sender will be the current identity that is used!
-   - If success then it should return
-   ```sh
-   (variant { Ok = 1 : nat })
-   ```
+- If you run this command, then the sender will be the current identity that is used!
+- If success then it should return
+
+```sh
+(variant { Ok = 1 : nat })
+```
 
 **Note:**
 
